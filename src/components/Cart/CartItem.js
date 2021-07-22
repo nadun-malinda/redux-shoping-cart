@@ -3,12 +3,11 @@ import { cartActions } from '../../store/cart-slice';
 import classes from './CartItem.module.css';
 
 const CartItem = (props) => {
-  const { id, title, quantity, total, price } = props.item;
-  console.log('cart items: ', props)
   const dispatch = useDispatch()
+  const { id, title, quantity, total, price } = props.item;
 
   const removeItemHandler = () => {
-    dispatch(cartActions.removeItemFromCart({ id: id }))
+    dispatch(cartActions.removeItemFromCart(id))
   }
 
   const addItemHandler = () => {
